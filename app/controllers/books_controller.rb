@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @newbook = Book.new
+    @book_comment = BookComment.new
   end
 
   def index
@@ -27,8 +28,6 @@ class BooksController < ApplicationController
       redirect_to books_path
     end
   end
-
-
 
   def update
     @book = Book.find(params[:id])
